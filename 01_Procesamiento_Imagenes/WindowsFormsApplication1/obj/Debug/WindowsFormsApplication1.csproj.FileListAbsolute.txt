@@ -1,0 +1,5 @@
+D:\UMSA\UMsa 1_2026\multimedia\Proyecto\personal multimedia\01_Procesamiento_Imagenes\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\UMSA\UMsa 1_2026\multimedia\Proyecto\personal multimedia\01_Procesamiento_Imagenes\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\UMSA\UMsa 1_2026\multimedia\Proyecto\personal multimedia\01_Procesamiento_Imagenes\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+D:\UMSA\UMsa 1_2026\multimedia\Proyecto\personal multimedia\01_Procesamiento_Imagenes\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+D:\UMSA\UMsa 1_2026\multimedia\Proyecto\personal multimedia\01_Procesamiento_Imagenes\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
