@@ -40,8 +40,26 @@
 
         <div class="sections-wrapper">
             
-            <!-- Sección 1: Texturas -->
+            <!-- MÓDULO 1 -->
+            <div class="module-title text-center glass-panel" style="padding: 30px; margin-bottom: -40px; border-radius: 20px;">
+                <h2><i class="fa-solid fa-code"></i> Módulo 1: Procesamiento de Imágenes (C#)</h2>
+                <p>Implementación de algoritmos gráficos y filtros espaciales con Windows Forms</p>
+            </div>
+
+            <!-- Sección 0: Menú Principal -->
             <section class="project-section glass-panel">
+                <div class="project-content">
+                    <h2><i class="fa-solid fa-list-ul"></i> Interfaz Principal</h2>
+                    <p class="description">El proyecto cuenta con un menú centralizado desarrollado en Windows Forms que permite acceder fácilmente a todas las herramientas de procesamiento y edición de imágenes construidas a lo largo del curso.</p>
+                </div>
+                <div class="project-media">
+                    <img src="04_Resultados/form menu.png" alt="Menú Principal" class="zoomable" onclick="openLightbox(this.src)">
+                    <span class="img-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Clic para ampliar</span>
+                </div>
+            </section>
+
+            <!-- Sección 1: Texturas -->
+            <section class="project-section glass-panel reverse">
                 <div class="project-content">
                     <h2><i class="fa-solid fa-layer-group"></i> Clasificación de Texturas</h2>
                     <p class="description">Esta aplicación procesa una imagen píxel por píxel para segmentar superficies como césped, tierra, cemento o agua. El algoritmo se basa en el principio de <strong>Distancia Mínima de Manhattan</strong>, calculando la distancia del color de cada píxel hacia los centroides predefinidos y clasificándolo en la categoría más cercana.</p>
@@ -67,7 +85,7 @@ int minD = Math.Min(Math.Min(dCesped, dTierra), Math.Min(dCemento, dAgua));</cod
             </section>
 
             <!-- Sección 2: Suavizado -->
-            <section class="project-section glass-panel reverse">
+            <section class="project-section glass-panel">
                 <div class="project-content">
                     <h2><i class="fa-solid fa-droplet"></i> Filtro de Suavizado 3x3</h2>
                     <p class="description">Técnica de convolución espacial diseñada para reducir el ruido y suavizar bordes bruscos. Funciona recorriendo la imagen original utilizando una <strong>ventana de 3×3 píxeles</strong>. Para cada píxel, calcula el color promedio tomando en cuenta sus 8 vecinos adyacentes y a sí mismo.</p>
@@ -93,10 +111,16 @@ bmpResult.SetPixel(x, y, Color.FromArgb(sumaR / 9, sumaG / 9, sumaB / 9));</code
                 </div>
             </section>
 
+            <!-- MÓDULO 2 -->
+            <div class="module-title text-center glass-panel" style="padding: 30px; margin-bottom: -40px; margin-top: 40px; border-radius: 20px;">
+                <h2><i class="fa-brands fa-unity"></i> Módulo 2: Producción Multimedia (Unity & IA)</h2>
+                <p>Desarrollo interactivo 3D y generación de contenido mediante Inteligencia Artificial</p>
+            </div>
+
             <!-- Sección 3: Vaca Lola -->
             <section class="project-section glass-panel vaca-lola-section">
                 <div class="project-content text-center" style="padding-bottom: 10px;">
-                    <h2><i class="fa-solid fa-vr-cardboard"></i> Producción Multimedia: "La Vaca Lola"</h2>
+                    <h2><i class="fa-solid fa-vr-cardboard"></i> Proyecto: "La Vaca Lola"</h2>
                     <p class="description" style="max-width: 800px; margin: 0 auto;">Este proyecto integra un escenario 3D interactivo desarrollado en Unity. Abarca todo el ciclo de producción multimedia: generación de audio mediante Inteligencia Artificial, riggueo de personajes, sincronización en línea de tiempo (Timeline) y exportación a WebGL.</p>
                 </div>
                 
@@ -109,7 +133,7 @@ bmpResult.SetPixel(x, y, Color.FromArgb(sumaR / 9, sumaG / 9, sumaB / 9));</code
                         <div class="timeline-card glass-panel">
                             <img src="04_Resultados/web aplio de el colab - generacion de cancion.png" class="zoomable" onclick="openLightbox(this.src)">
                             <div class="card-info">
-                                <h4>1. Generación de Canción (Web)</h4>
+                                <h4>1. Generación de Canción</h4>
                                 <p>Uso de una interfaz web conectada a Colab para establecer los parámetros base de la canción infantil.</p>
                             </div>
                         </div>
@@ -143,9 +167,18 @@ bmpResult.SetPixel(x, y, Color.FromArgb(sumaR / 9, sumaG / 9, sumaB / 9));</code
 
                         <!-- Paso 5 -->
                         <div class="timeline-card glass-panel">
-                            <img src="04_Resultados/Unity_timeline.png" class="zoomable" onclick="openLightbox(this.src)">
+                            <img src="04_Resultados/Unity- modelo y animacion.png" class="zoomable" onclick="openLightbox(this.src)">
                             <div class="card-info">
-                                <h4>5. Sincronización (Timeline)</h4>
+                                <h4>5. Animación (Animator)</h4>
+                                <p>Configuración del Animator y los estados de animación para gestionar transiciones fluidas de movimientos.</p>
+                            </div>
+                        </div>
+
+                        <!-- Paso 6 -->
+                        <div class="timeline-card glass-panel">
+                            <img src="04_Resultados/Unity_Timeline.png" class="zoomable" onclick="openLightbox(this.src)">
+                            <div class="card-info">
+                                <h4>6. Sincronización (Timeline)</h4>
                                 <p>Uso de Unity Timeline para coreografiar la animación del modelo 3D al ritmo preciso del audio generado.</p>
                             </div>
                         </div>

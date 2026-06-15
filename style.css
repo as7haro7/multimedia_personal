@@ -124,6 +124,25 @@ body {
     gap: 80px;
 }
 
+.module-title {
+    margin-bottom: -30px;
+}
+
+.module-title h2 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.module-title p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.text-center {
+    text-align: center;
+}
+
 .project-section {
     display: flex;
     align-items: stretch;
