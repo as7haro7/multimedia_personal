@@ -23,34 +23,11 @@ namespace WindowsFormsApplication1
             this.lblIteraciones = new System.Windows.Forms.Label();
             this.lblOriginal = new System.Windows.Forms.Label();
             this.lblSuavizada = new System.Windows.Forms.Label();
-            this.lblInfo = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numIteraciones)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblOriginal
-            // 
-            this.lblOriginal.AutoSize = true;
-            this.lblOriginal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOriginal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblOriginal.Location = new System.Drawing.Point(130, 8);
-            this.lblOriginal.Name = "lblOriginal";
-            this.lblOriginal.Size = new System.Drawing.Size(100, 15);
-            this.lblOriginal.TabIndex = 20;
-            this.lblOriginal.Text = "Imagen Original";
-            // 
-            // lblSuavizada
-            // 
-            this.lblSuavizada.AutoSize = true;
-            this.lblSuavizada.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuavizada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblSuavizada.Location = new System.Drawing.Point(530, 8);
-            this.lblSuavizada.Name = "lblSuavizada";
-            this.lblSuavizada.Size = new System.Drawing.Size(110, 15);
-            this.lblSuavizada.TabIndex = 21;
-            this.lblSuavizada.Text = "Imagen Suavizada";
             // 
             // pictureBox1
             // 
@@ -92,20 +69,44 @@ namespace WindowsFormsApplication1
             // 
             // btnSuavizar
             // 
-            this.btnSuavizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.btnSuavizar.BackColor = System.Drawing.Color.Black;
             this.btnSuavizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSuavizar.FlatAppearance.BorderSize = 0;
             this.btnSuavizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(180)))));
             this.btnSuavizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuavizar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuavizar.ForeColor = System.Drawing.Color.White;
-            this.btnSuavizar.Location = new System.Drawing.Point(422, 390);
+            this.btnSuavizar.Location = new System.Drawing.Point(523, 390);
             this.btnSuavizar.Name = "btnSuavizar";
             this.btnSuavizar.Size = new System.Drawing.Size(180, 40);
             this.btnSuavizar.TabIndex = 3;
             this.btnSuavizar.Text = "Aplicar Suavizado";
             this.btnSuavizar.UseVisualStyleBackColor = false;
             this.btnSuavizar.Click += new System.EventHandler(this.btnSuavizar_Click);
+            // 
+            // numIteraciones
+            // 
+            this.numIteraciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numIteraciones.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numIteraciones.Location = new System.Drawing.Point(230, 392);
+            this.numIteraciones.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numIteraciones.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numIteraciones.Name = "numIteraciones";
+            this.numIteraciones.Size = new System.Drawing.Size(55, 25);
+            this.numIteraciones.TabIndex = 4;
+            this.numIteraciones.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblIteraciones
             // 
@@ -114,31 +115,31 @@ namespace WindowsFormsApplication1
             this.lblIteraciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.lblIteraciones.Location = new System.Drawing.Point(155, 396);
             this.lblIteraciones.Name = "lblIteraciones";
-            this.lblIteraciones.Size = new System.Drawing.Size(68, 15);
+            this.lblIteraciones.Size = new System.Drawing.Size(67, 15);
             this.lblIteraciones.TabIndex = 5;
             this.lblIteraciones.Text = "Iteraciones:";
             // 
-            // numIteraciones
+            // lblOriginal
             // 
-            this.numIteraciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numIteraciones.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numIteraciones.Location = new System.Drawing.Point(230, 392);
-            this.numIteraciones.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            this.numIteraciones.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            this.numIteraciones.Name = "numIteraciones";
-            this.numIteraciones.Size = new System.Drawing.Size(55, 25);
-            this.numIteraciones.TabIndex = 4;
-            this.numIteraciones.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            this.lblOriginal.AutoSize = true;
+            this.lblOriginal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOriginal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblOriginal.Location = new System.Drawing.Point(130, 8);
+            this.lblOriginal.Name = "lblOriginal";
+            this.lblOriginal.Size = new System.Drawing.Size(93, 15);
+            this.lblOriginal.TabIndex = 20;
+            this.lblOriginal.Text = "Imagen Original";
             // 
-            // lblInfo
+            // lblSuavizada
             // 
-            this.lblInfo.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblInfo.Location = new System.Drawing.Point(12, 435);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(760, 30);
-            this.lblInfo.TabIndex = 10;
-            this.lblInfo.Text = "Filtro de promedio 3×3: para cada píxel se calcula el promedio de sus 9 vecinos (incluyendo el central) para suavizar ruido.";
+            this.lblSuavizada.AutoSize = true;
+            this.lblSuavizada.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuavizada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.lblSuavizada.Location = new System.Drawing.Point(530, 8);
+            this.lblSuavizada.Name = "lblSuavizada";
+            this.lblSuavizada.Size = new System.Drawing.Size(105, 15);
+            this.lblSuavizada.TabIndex = 21;
+            this.lblSuavizada.Text = "Imagen Suavizada";
             // 
             // openFileDialog1
             // 
@@ -153,7 +154,6 @@ namespace WindowsFormsApplication1
             this.ClientSize = new System.Drawing.Size(784, 470);
             this.Controls.Add(this.lblOriginal);
             this.Controls.Add(this.lblSuavizada);
-            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.numIteraciones);
             this.Controls.Add(this.lblIteraciones);
             this.Controls.Add(this.btnSuavizar);
@@ -165,12 +165,13 @@ namespace WindowsFormsApplication1
             this.MaximizeBox = false;
             this.Name = "Form6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Filtro de Suavizado - Promedio 3×3";
+            this.Text = "Filtro de Suavizado - Promedio";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numIteraciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -181,7 +182,6 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Label lblIteraciones;
         private System.Windows.Forms.Label lblOriginal;
         private System.Windows.Forms.Label lblSuavizada;
-        private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

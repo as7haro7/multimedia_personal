@@ -84,7 +84,7 @@
             // 
             // btnClasificar
             // 
-            this.btnClasificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.btnClasificar.BackColor = System.Drawing.Color.Black;
             this.btnClasificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClasificar.FlatAppearance.BorderSize = 0;
             this.btnClasificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(180)))));
@@ -103,7 +103,7 @@
             // 
             this.numUmbral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numUmbral.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numUmbral.Location = new System.Drawing.Point(411, 449);
+            this.numUmbral.Location = new System.Drawing.Point(387, 425);
             this.numUmbral.Minimum = new decimal(new int[] {
             5,
             0,
@@ -123,11 +123,11 @@
             this.lblUmbral.AutoSize = true;
             this.lblUmbral.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUmbral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.lblUmbral.Location = new System.Drawing.Point(296, 453);
+            this.lblUmbral.Location = new System.Drawing.Point(322, 429);
             this.lblUmbral.Name = "lblUmbral";
-            this.lblUmbral.Size = new System.Drawing.Size(112, 15);
+            this.lblUmbral.Size = new System.Drawing.Size(59, 15);
             this.lblUmbral.TabIndex = 5;
-            this.lblUmbral.Text = "Tolerancia (umbral):";
+            this.lblUmbral.Text = "tolerancia";
             // 
             // panelLeyenda
             // 
@@ -301,7 +301,7 @@
             this.MaximizeBox = false;
             this.Name = "Form5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Clasificación de Texturas (Tipo Satelital)";
+            this.Text = "Clasificación de Texturas";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUmbral)).EndInit();

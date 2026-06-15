@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Multimedia - Erick Poma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <!-- Encabezado Institucional -->
+        <header class="header">
+            <div class="header-text">
+                <p>Universidad Mayor de San Andrés</p>
+                <p>Facultad de Ciencias Puras y Naturales</p>
+                <p>Carrera de Informática</p>
+                <p>Multimedia</p>
+            </div>
+            
+            <img src="Logo_Umsa.png" alt="Logo UMSA" class="logo">
+            
+            <h1 class="main-title">Proyecto Multimedia <span>Individual</span></h1>
+            
+            <div class="student-info glass-panel">
+                <h3>Desarrollador</h3>
+                <p class="name">Erick Fernando Poma Condori</p>
+                <p class="date">Gestión 1/2026</p>
+            </div>
+        </header>
+
+        <div class="sections-wrapper">
+            
+            <!-- Sección 1: Texturas -->
+            <section class="project-section glass-panel">
+                <div class="project-content">
+                    <h2><i class="fa-solid fa-layer-group"></i> Clasificación de Texturas</h2>
+                    <p class="description">Esta aplicación procesa una imagen píxel por píxel para segmentar superficies como césped, tierra, cemento o agua. El algoritmo se basa en el principio de <strong>Distancia Mínima de Manhattan</strong>, calculando la distancia del color de cada píxel hacia los centroides predefinidos y clasificándolo en la categoría más cercana.</p>
+                    
+                    <div class="code-snippet">
+                        <div class="snippet-header">
+                            <span><i class="fa-brands fa-cuttlefish"></i> Form5.cs - Lógica Principal</span>
+                        </div>
+                        <pre><code class="language-csharp">// Algoritmo de Distancia Mínima hacia Centroides (Manhattan)
+int dCesped  = Math.Abs(p.R - centroidCesped.R)  + Math.Abs(p.G - centroidCesped.G)  + Math.Abs(p.B - centroidCesped.B);
+int dTierra  = Math.Abs(p.R - centroidTierra.R)  + Math.Abs(p.G - centroidTierra.G)  + Math.Abs(p.B - centroidTierra.B);
+int dCemento = Math.Abs(p.R - centroidCemento.R) + Math.Abs(p.G - centroidCemento.G) + Math.Abs(p.B - centroidCemento.B);
+int dAgua    = Math.Abs(p.R - centroidAgua.R)    + Math.Abs(p.G - centroidAgua.G)    + Math.Abs(p.B - centroidAgua.B);
+
+// Encontramos la menor distancia
+int minD = Math.Min(Math.Min(dCesped, dTierra), Math.Min(dCemento, dAgua));</code></pre>
+                    </div>
+                </div>
+                <div class="project-media">
+                    <img src="04_Resultados/form clasificador de texturas.png" alt="Clasificador de Texturas" class="zoomable" onclick="openLightbox(this.src)">
+                    <span class="img-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Clic para ampliar</span>
+                </div>
+            </section>
+
+            <!-- Sección 2: Suavizado -->
+            <section class="project-section glass-panel reverse">
+                <div class="project-content">
+                    <h2><i class="fa-solid fa-droplet"></i> Filtro de Suavizado 3x3</h2>
+                    <p class="description">Técnica de convolución espacial diseñada para reducir el ruido y suavizar bordes bruscos. Funciona recorriendo la imagen original utilizando una <strong>ventana de 3×3 píxeles</strong>. Para cada píxel, calcula el color promedio tomando en cuenta sus 8 vecinos adyacentes y a sí mismo.</p>
+                    
+                    <div class="code-snippet">
+                        <div class="snippet-header">
+                            <span><i class="fa-brands fa-cuttlefish"></i> Form6.cs - Filtro Promedio</span>
+                        </div>
+                        <pre><code class="language-csharp">// Recorrer la ventana de 3x3 centrada en (x, y)
+for (int dx = -1; dx <= 1; dx++) {
+    for (int dy = -1; dy <= 1; dy++) {
+        Color c = bmpOriginal.GetPixel(x + dx, y + dy);
+        sumaR += c.R; sumaG += c.G; sumaB += c.B;
+    }
+}
+// Promediamos entre los 9 píxeles vecinos
+bmpResult.SetPixel(x, y, Color.FromArgb(sumaR / 9, sumaG / 9, sumaB / 9));</code></pre>
+                    </div>
+                </div>
+                <div class="project-media">
+                    <img src="04_Resultados/form filtro de suavisado.png" alt="Filtro de Suavizado" class="zoomable" onclick="openLightbox(this.src)">
+                    <span class="img-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Clic para ampliar</span>
+                </div>
+            </section>
+
+            <!-- Sección 3: Vaca Lola -->
+            <section class="project-section glass-panel vaca-lola-section">
+                <div class="project-content text-center" style="padding-bottom: 10px;">
+                    <h2><i class="fa-solid fa-vr-cardboard"></i> Producción Multimedia: "La Vaca Lola"</h2>
+                    <p class="description" style="max-width: 800px; margin: 0 auto;">Este proyecto integra un escenario 3D interactivo desarrollado en Unity. Abarca todo el ciclo de producción multimedia: generación de audio mediante Inteligencia Artificial, riggueo de personajes, sincronización en línea de tiempo (Timeline) y exportación a WebGL.</p>
+                </div>
+                
+                <!-- Timeline de Making Of -->
+                <div class="making-of-timeline">
+                    <h3>Proceso de Desarrollo (Making-Of)</h3>
+                    
+                    <div class="timeline-grid">
+                        <!-- Paso 1 -->
+                        <div class="timeline-card glass-panel">
+                            <img src="04_Resultados/web aplio de el colab - generacion de cancion.png" class="zoomable" onclick="openLightbox(this.src)">
+                            <div class="card-info">
+                                <h4>1. Generación de Canción (Web)</h4>
+                                <p>Uso de una interfaz web conectada a Colab para establecer los parámetros base de la canción infantil.</p>
+                            </div>
+                        </div>
+
+                        <!-- Paso 2 -->
+                        <div class="timeline-card glass-panel">
+                            <img src="04_Resultados/colab aplio - para generacion de audio.png" class="zoomable" onclick="openLightbox(this.src)">
+                            <div class="card-info">
+                                <h4>2. Audio IA (Google Colab)</h4>
+                                <p>Ejecución de modelos de inteligencia artificial en la nube para sintetizar la voz y la pista musical.</p>
+                            </div>
+                        </div>
+
+                        <!-- Paso 3 -->
+                        <div class="timeline-card glass-panel">
+                            <img src="04_Resultados/mixamo - esqueleto a modelo 3d.png" class="zoomable" onclick="openLightbox(this.src)">
+                            <div class="card-info">
+                                <h4>3. Rigging en Mixamo</h4>
+                                <p>Proceso de asignar un esqueleto (rig) al modelo 3D para permitirle realizar animaciones fluidas.</p>
+                            </div>
+                        </div>
+
+                        <!-- Paso 4 -->
+                        <div class="timeline-card glass-panel">
+                            <img src="04_Resultados/unity - trabajando modelo.png" class="zoomable" onclick="openLightbox(this.src)">
+                            <div class="card-info">
+                                <h4>4. Ensamblaje en Unity</h4>
+                                <p>Integración de los modelos, texturas y materiales dentro del motor gráfico Unity.</p>
+                            </div>
+                        </div>
+
+                        <!-- Paso 5 -->
+                        <div class="timeline-card glass-panel">
+                            <img src="04_Resultados/Unity_timeline.png" class="zoomable" onclick="openLightbox(this.src)">
+                            <div class="card-info">
+                                <h4>5. Sincronización (Timeline)</h4>
+                                <p>Uso de Unity Timeline para coreografiar la animación del modelo 3D al ritmo preciso del audio generado.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resultado Final -->
+                <div class="project-media full-width-media interactive-banner">
+                    <img src="04_Resultados/resultado webgl modelo 3d.jpg" alt="Vaca Lola Final" class="panoramic">
+                    <div class="action-overlay">
+                        <a href="02_Produccion_Multimedia/vaca_lola_webgl/index.html" class="play-btn-large">
+                            <i class="fa-solid fa-play"></i> Iniciar Animación WebGL
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Modal Lightbox para imágenes -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+
+        // Funciones para el Lightbox
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        function openLightbox(src) {
+            lightbox.style.display = "flex";
+            lightboxImg.src = src;
+            document.body.style.overflow = "hidden"; // Prevenir scroll
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    </script>
+</body>
+</html>

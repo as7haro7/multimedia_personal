@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1
         {
             this.btnForm5 = new System.Windows.Forms.Button();
             this.btnForm6 = new System.Windows.Forms.Button();
-            this.btnForm7 = new System.Windows.Forms.Button();
+
             this.labelTitulo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -55,23 +55,6 @@ namespace WindowsFormsApplication1
             this.btnForm6.UseVisualStyleBackColor = false;
             this.btnForm6.Click += new System.EventHandler(this.btnForm6_Click);
             // 
-            // btnForm7
-            // 
-            this.btnForm7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnForm7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnForm7.FlatAppearance.BorderSize = 0;
-            this.btnForm7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.btnForm7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnForm7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForm7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnForm7.Location = new System.Drawing.Point(33, 197);
-            this.btnForm7.Name = "btnForm7";
-            this.btnForm7.Size = new System.Drawing.Size(200, 45);
-            this.btnForm7.TabIndex = 6;
-            this.btnForm7.Text = "Clasificación Índices";
-            this.btnForm7.UseVisualStyleBackColor = false;
-            this.btnForm7.Click += new System.EventHandler(this.btnForm7_Click);
-            // 
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
@@ -92,7 +75,6 @@ namespace WindowsFormsApplication1
             this.ClientSize = new System.Drawing.Size(280, 277);
             this.Controls.Add(this.btnForm5);
             this.Controls.Add(this.btnForm6);
-            this.Controls.Add(this.btnForm7);
             this.Controls.Add(this.labelTitulo);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -106,7 +88,6 @@ namespace WindowsFormsApplication1
         }
         private System.Windows.Forms.Button btnForm5;
         private System.Windows.Forms.Button btnForm6;
-        private System.Windows.Forms.Button btnForm7;
         private System.Windows.Forms.Label labelTitulo;
     }
 }

@@ -49,12 +49,6 @@ namespace WindowsFormsApplication1
             f6.Show();
         }
 
-        private void btnForm7_Click(object sender, EventArgs e)
-        {
-            Form7 f7 = new Form7();
-            f7.Show();
-        }
-
         private void labelTitulo_Click(object sender, EventArgs e)
         {
 
