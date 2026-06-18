@@ -9,8 +9,6 @@ El directorio principal del proyecto se divide en las siguientes tres carpetas f
 ### 1. 01_Procesamiento_Imagenes
 Esta sección contiene una aplicación de escritorio desarrollada en **C#** (Windows Forms Application). La aplicación actúa como un compendio de ejercicios prácticos de procesamiento digital de imágenes. 
 
-**Requisito de Base de Datos:** Se requiere tener una base de datos local **SQL Server** (instancia `.\SQLEXPRESS`) llamada `texturas`. Algunos formularios (como el Form3 y Form4) utilizan esta base de datos mediante Autenticación de Windows (`Integrated Security=True`) para guardar o leer información.
-
 Características principales:
 *   **Interfaz Principal (Form1):** Funciona como un menú que da acceso a los distintos ejercicios.
 *   **Filtros Básicos (Form2):** Permite cargar una imagen y aplicarle filtros de extracción de canales RGB (Rojo, Verde, Azul), conversión a escala de grises y efecto negativo.

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Multimedia - Erick Poma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <!-- Encabezado Institucional -->
+        <header class="header">
+            <div class="header-text">
+                <p>Universidad Mayor de San Andrés</p>
+                <p>Facultad de Ciencias Puras y Naturales</p>
+                <p>Carrera de Informática</p>
+                <p>Multimedia</p>
+            </div>
+            
+            <img src="Logo_Umsa.png" alt="Logo UMSA" class="logo">
+            
+            <h1 class="main-title">Aplicación <span>Windows Forms (C#)</span></h1>
+            
+            <div class="student-info glass-panel">
+                <h3>Desarrollador</h3>
+                <p class="name">Erick Fernando Poma Condori</p>
+                <p class="date">Gestión 1/2026</p>
+            </div>
+        </header>
+
+        <div class="sections-wrapper">
+
+        
+
+            
+            
+        
+        <div style="margin-bottom: 20px; margin-left: 10px;">
+            <a href="index.html" class="glass-panel" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 8px; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; background: rgba(0,0,0,0.3);" onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(0,0,0,0.3)'; this.style.transform='translateY(0)'">
+                <i class="fa-solid fa-arrow-left"></i> Volver a Actividades Principales
+            </a>
+        </div>
+
+<!-- TÍTULO PRINCIPAL -->
+            <div class="module-title text-center glass-panel" style="padding: 30px; margin-bottom: -40px; border-radius: 20px;">
+                <h2><i class="fa-solid fa-user-graduate"></i> Actividades Individuales</h2>
+                <p>Implementación de algoritmos de procesamiento de imágenes a nivel de píxel y producción multimedia</p>
+            </div>
+
+            <!-- Sección 0: Menú Principal -->
+            <section class="project-section glass-panel reveal">
+                <div class="project-content">
+                    <h2><i class="fa-solid fa-list-ul"></i> Interfaz Principal (C#)</h2>
+                    <p class="description">El proyecto cuenta con un menú centralizado desarrollado en Windows Forms que permite acceder fácilmente a todas las herramientas de procesamiento y edición de imágenes construidas a lo largo del curso.</p>
+                </div>
+                <div class="project-media">
+                    <img src="04_Resultados/form menu.png" alt="Menú Principal" class="zoomable" onclick="openLightbox(this.src)">
+                    <span class="img-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Clic para ampliar</span>
+                </div>
+            </section>
+
+            <!-- a) Texturas -->
+            <section class="project-section glass-panel reverse reveal">
+                <div class="project-content">
+                    <h2><i class="fa-solid fa-layer-group"></i> a) Clasificación de Texturas</h2>
+                    <p class="description">Esta aplicación procesa una imagen píxel por píxel para segmentar superficies como césped, tierra, cemento o agua. El algoritmo se basa en el principio de <strong>Distancia Mínima de Manhattan</strong>, calculando la distancia del color de cada píxel hacia los centroides predefinidos y clasificándolo en la categoría más cercana.</p>
+                    
+                    <div class="code-snippet">
+                        <div class="snippet-header">
+                            <span><i class="fa-brands fa-cuttlefish"></i> Form5.cs - Lógica Principal</span>
+                        </div>
+                        <pre><code class="language-csharp">// Algoritmo de Distancia Mínima hacia Centroides (Manhattan)
+int dCesped  = Math.Abs(p.R - centroidCesped.R)  + Math.Abs(p.G - centroidCesped.G)  + Math.Abs(p.B - centroidCesped.B);
+int dTierra  = Math.Abs(p.R - centroidTierra.R)  + Math.Abs(p.G - centroidTierra.G)  + Math.Abs(p.B - centroidTierra.B);
+int dCemento = Math.Abs(p.R - centroidCemento.R) + Math.Abs(p.G - centroidCemento.G) + Math.Abs(p.B - centroidCemento.B);
+int dAgua    = Math.Abs(p.R - centroidAgua.R)    + Math.Abs(p.G - centroidAgua.G)    + Math.Abs(p.B - centroidAgua.B);
+
+// Encontramos la menor distancia
+int minD = Math.Min(Math.Min(dCesped, dTierra), Math.Min(dCemento, dAgua));</code></pre>
+                    </div>
+
+                    
+                </div>
+                <div class="project-media">
+                    <img src="04_Resultados/form clasificador de texturas.png" alt="Clasificador de Texturas" class="zoomable" onclick="openLightbox(this.src)">
+                    <span class="img-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Clic para ampliar</span>
+                </div>
+            </section>
+
+            <!-- b) Suavizado -->
+            <section class="project-section glass-panel reveal">
+                <div class="project-content">
+                    <h2><i class="fa-solid fa-droplet"></i> b) Implementación de un Filtro de Suavizado</h2>
+                    <p class="description">Técnica de convolución espacial diseñada para reducir el ruido y suavizar bordes bruscos. Funciona recorriendo la imagen original utilizando una <strong>ventana de 3×3 píxeles</strong>. Para cada píxel, calcula el color promedio tomando en cuenta sus 8 vecinos adyacentes y a sí mismo.</p>
+                    
+                    <div class="code-snippet">
+                        <div class="snippet-header">
+                            <span><i class="fa-brands fa-cuttlefish"></i> Form6.cs - Filtro Promedio</span>
+                        </div>
+                        <pre><code class="language-csharp">// Recorrer la ventana de 3x3 centrada en (x, y)
+for (int dx = -1; dx <= 1; dx++) {
+    for (int dy = -1; dy <= 1; dy++) {
+        Color c = bmpOriginal.GetPixel(x + dx, y + dy);
+        sumaR += c.R; sumaG += c.G; sumaB += c.B;
+    }
+}
+// Promediamos entre los 9 píxeles vecinos
+bmpResult.SetPixel(x, y, Color.FromArgb(sumaR / 9, sumaG / 9, sumaB / 9));</code></pre>
+                    </div>
+
+                    
+                </div>
+                <div class="project-media">
+                    <img src="04_Resultados/form filtro de suavisado.png" alt="Filtro de Suavizado" class="zoomable" onclick="openLightbox(this.src)">
+                    <span class="img-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Clic para ampliar</span>
+                </div>
+            </section>
+
+                    </div>
+    </main>
+
+    <!-- Modal Lightbox para imágenes -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+
+        // Funciones para el Lightbox
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        function openLightbox(src) {
+            lightbox.style.display = "flex";
+            lightboxImg.src = src;
+            document.body.style.overflow = "hidden"; // Prevenir scroll
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    </script>
+
+    <script>
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+    </script>
+</body>
+
+</html>
